@@ -1,7 +1,7 @@
 <?php
-include __DIR__ . '/classes/Movie.php';
-include __DIR__ . '/classes/Genres.php';
-include __DIR__ . '/Data.php';
+include __DIR__ . '/Models/Movie.php';
+include __DIR__ . '/Models/Genres.php';
+include __DIR__ . '/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +18,7 @@ include __DIR__ . '/Data.php';
         <ul><?php
             foreach ($movies as $movie) { ?>
                 <li>
-                    <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?= $movie->genres ?></li>
-            <?php } ?>
+                    <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?php foreach ($movie->genres as $genre) { ?> <?= $genre->firstGenre ?> - <?= $genre->secondGenre ?> - <?= $genre->thirdGenre ?> <?php } ?></li> <?php } ?>
         </ul>
     </div>
 </body>

@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . '/classes/Movie.php';
-include __DIR__ . '/classes/Genres.php';
+include __DIR__ . '/Models/Movie.php';
+include __DIR__ . '/Models/Genres.php';
 
 $filmOne = new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999, [
     new Genres('Animation', 'Thriller', 'Drama')
