@@ -2,17 +2,22 @@
 
 class Movie
 {
-    public $title;
-    public $length;
-    public $country;
-    public $director;
-    public $publicationYear;
+    public string $title;
+    public string $length;
+    public string $country;
+    public string $director;
+    public int $publicationYear;
+
+    // COSTRUTTORE
+    public function __construct(string $title, string $length, string $country, string $director, int $publicationYear)
+    {
+        $this->title = $title;
+        $this->length = $length;
+        $this->country = $country;
+        $this->director = $director;
+        $this->publicationYear = $publicationYear;
+    }
 }
 
-$filmOne = new Movie();
-$filmOne->title = 'Fight Club';
-$filmOne->length = '139 min';
-$filmOne->country = 'America';
-$filmOne->director = 'David Fincher';
-$filmOne->publicationYear = '1999';
+$filmOne = new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999);
 var_dump($filmOne);
