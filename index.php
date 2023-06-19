@@ -1,33 +1,27 @@
 <?php
+include __DIR__ . '/classes/Movie.php';
+include __DIR__ . '/classes/Genres.php';
+include __DIR__ . '/Data.php';
+?>
 
-class Movie
-{
-    public string $title;
-    public string $length;
-    public string $country;
-    public string $director;
-    public int $publicationYear;
+<!DOCTYPE html>
+<html lang="en">
 
-    // COSTRUTTORE
-    public function __construct(string $title, string $length, string $country, string $director, int $publicationYear)
-    {
-        $this->title = $title;
-        $this->length = $length;
-        $this->country = $country;
-        $this->director = $director;
-        $this->publicationYear = $publicationYear;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
 
-    // METODO
-    public function getInformation()
-    {
-        return $this->title . ', ' . $this->length . ', ' . $this->country . ', ' . $this->director . ', ' . $this->publicationYear . '.' . '<br>';
-    }
-}
+<body>
+    <div class="container">
+        <ul><?php
+            foreach ($movies as $movie) { ?>
+                <li>
+                    <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?= $movie->genres ?></li>
+            <?php } ?>
+        </ul>
+    </div>
+</body>
 
-$filmOne = new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999);
-var_dump($filmOne);
-echo $filmOne->getInformation();
-
-$filmTwo = new Movie('Principessa Mononoke', '133 min', 'Japan', 'Hayao Miyazaki', 1997);
-echo $filmTwo->getInformation();
+</html>
