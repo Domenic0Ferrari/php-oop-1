@@ -17,7 +17,17 @@ class Movie
         $this->director = $director;
         $this->publicationYear = $publicationYear;
     }
+
+    // METODO
+    public function getInformation()
+    {
+        return $this->title . ', ' . $this->length . ', ' . $this->country . ', ' . $this->director . ', ' . $this->publicationYear . '.' . '<br>';
+    }
 }
 
 $filmOne = new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999);
 var_dump($filmOne);
+echo $filmOne->getInformation();
+
+$filmTwo = new Movie('Principessa Mononoke', '133 min', 'Japan', 'Hayao Miyazaki', 1997);
+echo $filmTwo->getInformation();
