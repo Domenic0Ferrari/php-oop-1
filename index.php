@@ -20,7 +20,20 @@ include __DIR__ . '/db.php';
         <h1 class="text-center text-primary">FILM</h1>
         <ul class="text-bg-success p-3"><?php foreach ($movies as $index => $movie) { ?>
                 <li>
-                    <?= $index ?>) <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?php foreach ($movie->genres as $genre) { ?> <?= $genre->firstGenre ?> - <?= $genre->descriptionGenre ?> - <?php } ?>
+                    <ul>
+                        <li><?= $index ?>) </li>
+                        <li><?= $movie->title ?></li>
+                        <li><?= $movie->length ?></li>
+                        <li><?= $movie->country ?></li>
+                        <li><?= $movie->director ?></li>
+                        <li><?= $movie->publicationYear ?></li>
+                        <li>
+                            <ul><?php foreach ($movie->genres as $genre) { ?>
+                                    <li><?= $genre->firstGenre ?> - <?= $genre->descriptionGenre ?></li>
+                                <?php } ?>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             <?php } ?>
         </ul>
