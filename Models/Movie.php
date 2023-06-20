@@ -24,6 +24,10 @@ class Movie
             }
         }
         $this->genres = $genres;
+        // AGGIUNGO UN CONTROLLO SUL TITOLO, CHE NON PUò ESSERE LASCIATO VUOTO
+        if ($title === '') {
+            die('Il titolo non può essere vuoto');
+        }
     }
 
     // METODO
