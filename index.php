@@ -18,9 +18,9 @@ include __DIR__ . '/db.php';
 <body>
     <div class="container bg-success">
         <h1 class="text-center text-primary">FILM</h1>
-        <ul class="text-bg-success p-3"><?php foreach ($movies as $movie) { ?>
+        <ul class="text-bg-success p-3"><?php foreach ($movies as $index => $movie) { ?>
                 <li>
-                    <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?php foreach ($movie->genres as $genre) { ?> <?= $genre->firstGenre ?> - <?= $genre->descriptionGenre ?> <?php } ?>
+                    <?= $index ?>) <?= $movie->title ?> - <?= $movie->length ?> - <?= $movie->country ?> - <?= $movie->director ?> - <?= $movie->publicationYear ?> - <?php foreach ($movie->genres as $genre) { ?> <?= $genre->firstGenre ?> - <?= $genre->descriptionGenre ?> - <?php } ?>
                 </li>
             <?php } ?>
         </ul>

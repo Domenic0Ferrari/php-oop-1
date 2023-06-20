@@ -11,7 +11,7 @@ $arrGenres = [
 ];
 
 $movies = [
-    new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999, [$arrGenres[0]]),
+    new Movie('Fight Club', '139 min', 'America', 'David Fincher', 1999, [$arrGenres[0], $arrGenres[2]]),
     new Movie('Principessa Mononoke', '133 min', 'Japan', 'Hayao Miyazaki', 1997, [$arrGenres[3]]),
     new Movie('Il Padrino', '175 min', 'America', 'Francis Ford Coppola', 1972, [$arrGenres[5]]),
     new Movie('Lo Squalo', '124 min', 'America', 'Steven Spielberg', 1975, [$arrGenres[7]]),
